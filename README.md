@@ -10,7 +10,8 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Flex Panel Gallery
 -Type Ahead
 -Array Cardio Day 2
+-Fun with HTML5 Canvas
 
 ## Next Assignment :label:
+-Dev Tools Domaination
 
--Fun with HTML5 Canvas
