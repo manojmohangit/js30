@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+var gistData = [];
+fetch(endpoint)
+  .then(response => response.json())
+  .then(data => {
+    gistData = data;
+    document.querySelector(".search").addEventListener("keyup", searchData)
+  })
+
+function searchData() {
+  var searchedTerm = this.value;
+  var searchegRegex = new RegExp(searchedTerm, "i");
+  var filteredData = gistData.filter( (data) => data.city.search(searchegRegex) !== -1 || data.state.search(searchegRegex) !== -1) 
+  var htmlData = "";
+  filteredData.forEach(data => {
+    city = data.city.replace(searchegRegex, function(matched) {
+      return `<span class="hl">${matched}</span>`
+    })
+    state = data.state.replace(searchegRegex, function(matched) {
+      return `<span class="hl">${matched}</span>`
+    })
+    htmlData += `
+      <li>
+        <span>${city}, ${state}</span> 
+        <span class="population">${data.population}</span>
+      </li>`
+  });
+  document.querySelector(".suggestions").innerHTML = htmlData
+}
+
+</script>
+</body>
+</html>

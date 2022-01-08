@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+  const canvas = document.querySelector("#draw");
+  canvas.width = window.innerWidth;
+  canvas.height = window.height;
+
+  var canDraw = false;
+
+  canvas.addEventListener("mousedown", draw);
+  canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mouseup", release)
+
+  function draw() {
+    // if(!canDraw) 
+    //   canDraw = true
+  }
+
+  function release() {
+    // canDraw = false
+  }
+
+  const context = canvas.getContext("2D")
+</script>
+  
+<style>
+  html, body {
+    margin: 0;
+  }
+</style>
+
+</body>
+</html>
