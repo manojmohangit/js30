@@ -11,7 +11,8 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Type Ahead\
 -Array Cardio Day 2\
 -Fun with HTML5 Canvas\
+-Dev Tools Domaination
 
 ## Next Assignment :label:
--Dev Tools Domaination
+-Hold Shift and Check Checkboxes
 

@@ -18,28 +18,59 @@
     }
 
     // Regular
+    console.log("Simple Log")
 
     // Interpolated
+    console.log("Log by using %s", "Interpolated String")
 
     // Styled
+    console.log("%c Styling the console log text", "font-size: 20px; color: '#BADA55';");
 
     // warning!
-
+    console.warn("Show some text in warning format")
     // Error :|
+    console.error("There is a way to console error as well")
 
     // Info
+    console.info("You can also console some extra information")
 
     // Testing
+    console.assert(1===2, "Assertion testing 1===2")
 
     // clearing
+    //console.clear()
 
     // Viewing DOM Elements
+    const p = document.querySelector('p');
+    
+    console.log(p)
+    console.dir(p) // This will show attributes as well
 
     // Grouping together
-
+    dogs.forEach(dog => {
+      console.group(`Dog ${dog.name} info`)
+      console.log(`Name: ${dog.name}`)
+      console.log(`Age: ${dog.age}`)
+      console.groupEnd(`Dog ${dog.name} info`)
+    })
     // counting
+    dogs.forEach(dog => {
+      console.count(dog.name)
+    })
 
+    dogs.forEach(dog => {
+      console.count(dog.name)
+    })
+    
     // timing
+    console.time(`Time to render dogs`);
+    dogs.forEach(dog => {
+      console.group(`Dog ${dog.name} info`)
+      console.log(`Name: ${dog.name}`)
+      console.log(`Age: ${dog.age}`)
+      console.groupEnd(`Dog ${dog.name} info`)
+    })
+    console.timeEnd(`Time to render dogs`)
 
   </script>
 </body>
