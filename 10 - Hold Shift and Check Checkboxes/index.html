@@ -96,6 +96,58 @@
   </div>
 
 <script>
+  const inputDOM = document.querySelectorAll("input[type=checkbox]");
+  const items = document.querySelectorAll(".item");
+  var lastNode = null;
+  inputDOM.forEach((input) => {
+    input.addEventListener("click", (e) => {
+      if(pressedShift) {
+        lastNodeFound = false;
+        checked = false;
+        items.forEach((item, index) => {
+          if(checked) return;
+          if(item === lastNode) {
+            lastNodeFound = true;
+          }
+          if(item === e.target.parentElement) {
+            i=index;
+            if(lastNodeFound) {
+              while(i>0) {
+                items[i].querySelector("input").checked = true;
+                if(items[i] === lastNode)
+                  break;
+                i--;
+              }
+            } else {
+              while(i<items.length) {
+                items[i].querySelector("input").checked = true;
+                if(items[i] === lastNode)
+                  break;
+                i++;
+              }
+            }
+
+            checked = true;
+          }
+        })
+      }
+      lastNode = e.target.parentElement;
+    })
+  })
+
+  var pressedShift = false;
+  document.addEventListener("keydown", (e) => {
+    if(e.keyCode === 16) {
+      pressedShift = true;
+    }
+  })
+
+  document.addEventListener("keyup", (e) => {
+    if(e.keyCode === 16) {
+      pressedShift = false;
+    }
+  })
+
 </script>
 </body>
 </html>
