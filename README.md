@@ -12,8 +12,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Array Cardio Day 2\
 -Fun with HTML5 Canvas\
 -Dev Tools Domaination\
--Hold Shift and Check Checkboxes
-## Next Assignment :label:
-
+-Hold Shift and Check Checkboxes\
 -Custom Video Player
-
+## Next Assignment :label:
+-Key Sequence Detection
