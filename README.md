@@ -14,6 +14,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Dev Tools Domaination\
 -Hold Shift and Check Checkboxes\
 -Custom Video Player\
--Key Sequence Detection
-## Next Assignment :label:
+-Key Sequence Detection\
 -Slide in on Scroll
+## Next Assignment :label:
+-JavaScript References VS Copying

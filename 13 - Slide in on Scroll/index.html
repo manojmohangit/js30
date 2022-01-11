@@ -43,6 +43,7 @@
   </div>
 
   <script>
+    // to call function once in particular period. Here by default the func will be called once in 20 ms
     function debounce(func, wait = 20, immediate = true) {
       var timeout;
       return function() {
@@ -57,6 +58,24 @@
         if (callNow) func.apply(context, args);
       };
     }
+
+    var images = document.querySelectorAll("img");
+    var windowHeight = window.innerHeight;
+
+    function activateSlides() {
+      scrollPosition = window.scrollY;
+      images.forEach((img) => {
+
+        // if image is at bottom -> (scrollPosition + windowHeight) < (img.offsetTop + img.height/2)
+        // if image is scrolledPast -> (img.offsetTop + img.height ) < scrollPosition
+        if((scrollPosition + windowHeight) < (img.offsetTop + img.height/2) || (img.offsetTop + img.height ) < scrollPosition)
+          img.classList.remove("active")
+        else 
+          img.classList.add("active")
+      })
+    }
+
+    document.addEventListener("scroll", debounce(activateSlides))
 
   </script>
 
