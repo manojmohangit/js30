@@ -7,6 +7,22 @@
 </head>
 <body>
 <script>
+  var secretCode = "helloworld";
+  var keyPressed = [];
+
+  document.addEventListener("keyup", (e) => {
+    keyPressed.push(e.key);
+
+    //keyPressed.splice(-secretCode.length-1, keyPressed.length - secredCode.length);
+    keyPressed.length > secretCode.length && keyPressed.shift()
+    
+    if(keyPressed.join('') === secretCode) {
+      console.log("Secret Code Entered!!!!")
+      cornify_add();
+    }
+
+    console.log(keyPressed)
+  })
 </script>
 </body>
 </html>

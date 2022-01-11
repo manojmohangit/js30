@@ -13,6 +13,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Fun with HTML5 Canvas\
 -Dev Tools Domaination\
 -Hold Shift and Check Checkboxes\
--Custom Video Player
-## Next Assignment :label:
+-Custom Video Player\
 -Key Sequence Detection
+## Next Assignment :label:
+-Slide in on Scroll
