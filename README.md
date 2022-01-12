@@ -15,6 +15,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Hold Shift and Check Checkboxes\
 -Custom Video Player\
 -Key Sequence Detection\
--Slide in on Scroll
-## Next Assignment :label:
+-Slide in on Scroll\
 -JavaScript References VS Copying
+## Next Assignment :label:
+-LocalStorage
