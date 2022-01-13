@@ -16,6 +16,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Custom Video Player\
 -Key Sequence Detection\
 -Slide in on Scroll\
--JavaScript References VS Copying
+-JavaScript References VS Copying\
+-LocalStorage and Event Delegation
 ## Next Assignment :label:
--LocalStorage
+-Mouse Move Shadow
