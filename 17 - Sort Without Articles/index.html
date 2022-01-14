@@ -49,6 +49,40 @@
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
 
+// const articles = ["The", "A", "An"];
+// sortedBands = bands.sort((bandA, bandB) => {
+//   bandA = bandA.split(" ").filter((band) => {
+//     var notArticle = true;
+//     articles.forEach((article) => {
+//       if(article === band) {
+//         notArticle = false
+//       }
+//     })
+//     return notArticle
+//   }).join(" ");
+//   bandB = bandB.split(" ").filter((band) => {
+//     var notArticle = true;
+//     articles.forEach((article) => {
+//       if(article === band) {
+//         notArticle = false
+//       }
+//     })
+//     return notArticle
+//   }).join(" ");
+//   return bandA.localeCompare(bandB)
+// })
+
+function strip(bandName) {
+  return bandName.replace(/^(the |a |an )/i, "");
+}
+
+var sortedBands = [...bands].sort((bandA, bandB) => strip(bandA) > strip(bandB) ? 1 : -1);
+document.querySelector("#bands").innerHTML = sortedBands.map((band) => {
+  return `<li>${band}</li>`
+}).join('');
+
+console.log(`Unsorted Array: ${bands}`)
+console.log(`Sorted Array: ${sortedBands}`)
 </script>
 
 </body>

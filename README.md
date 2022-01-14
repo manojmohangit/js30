@@ -18,6 +18,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Slide in on Scroll\
 -JavaScript References VS Copying\
 -LocalStorage and Event Delegation\
--Mouse Move Shadow
-## Next Assignment :label:
+-Mouse Move Shadow\
 -Sort Without Articles
+## Next Assignment :label:
+-Adding Up Times with Reduce
