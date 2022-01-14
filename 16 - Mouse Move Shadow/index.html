@@ -35,6 +35,30 @@
   </style>
 
 <script>
+  // var lastOffsetX = 0, lastOffsetY = 0;
+  const heroDOM = document.querySelector(".hero");
+  const h1DOM = document.querySelector("h1");
+  var thresholdShadow = 300;
+  function drawShadow(e) {
+    const {offsetWidth: width, offsetHeight: height} = heroDOM;
+    var {offsetX: x, offsetY: y} = e;
+
+    if(e.target !== this) {
+      x += e.target.offsetLeft;
+      y += e.target.offsetTop;
+    }
+
+    const shadowX = (x / width * thresholdShadow) - (thresholdShadow / 2)
+    const shadowY = (y / height * thresholdShadow) - (thresholdShadow / 2)
+
+    h1DOM.style.textShadow = `
+     ${shadowX}px ${shadowY}px 0 rgba(255,0,0,1),
+     ${shadowX*-1}px ${shadowY}px 0 rgba(0,255,0,1),
+     ${shadowX}px ${shadowY*-1}px 0 rgba(0,0,255,1),
+     ${shadowX*-1}px ${shadowY*-1}px 0 rgba(255,255,1,1)
+    `;
+  }
+  heroDOM.addEventListener("mousemove", drawShadow)
 </script>
 </body>
 </html>
