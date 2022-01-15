@@ -182,6 +182,23 @@
     </li>
   </ul>
 <script>
+    var list = document.querySelectorAll("li")
+
+    var totalSeconds = Array.from(list).reduce((totalSeconds, li) => {
+      li.dataset.time.split(":").forEach((time, index, arr) => {
+        totalSeconds += parseInt(time) * Math.pow(60, (arr.length-1-index))
+      })
+      return totalSeconds;
+    }, 0);
+    var secondsLeft = totalSeconds;
+    var hours = Math.floor(secondsLeft/(60*60));
+    secondsLeft = secondsLeft % (60 * 60);
+    var minutes = Math.floor(secondsLeft / 60);
+    secondsLeft = secondsLeft % (60);
+    var seconds = secondsLeft;
+    console.log(`Total Seconds: ${totalSeconds}`)
+    
+    console.log(`Total Time Duration: ${hours}:${minutes}:${seconds}`)
 </script>
 </body>
 </html>
