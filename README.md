@@ -20,6 +20,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -LocalStorage and Event Delegation\
 -Mouse Move Shadow\
 -Sort Without Articles\
--Adding Up Times with Reduce
-## Next Assignment :label:
+-Adding Up Times with Reduce\
 -Webcam Fun
+## Next Assignment :label:
+-Speech Detection
