@@ -22,5 +22,6 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Sort Without Articles\
 -Adding Up Times with Reduce\
 -Webcam Fun
+-Speech Detection with Copy Paste Feature
 ## Next Assignment :label:
--Speech Detection
+
