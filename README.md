@@ -21,7 +21,8 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Mouse Move Shadow\
 -Sort Without Articles\
 -Adding Up Times with Reduce\
--Webcam Fun
--Speech Detection with Copy Paste Feature
+-Webcam Fun\
+-Speech Detection with Copy Paste Feature\
+-Geolocation
 ## Next Assignment :label:
-
+-Follow Along Link Highlighter
