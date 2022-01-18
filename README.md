@@ -23,6 +23,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Adding Up Times with Reduce\
 -Webcam Fun\
 -Speech Detection with Copy Paste Feature\
--Geolocation
-## Next Assignment :label:
+-Geolocation\
 -Follow Along Link Highlighter
+## Next Assignment :label:
+-Speech Synthesis

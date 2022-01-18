@@ -24,9 +24,23 @@
       <p>Esse quibusdam, ad, ducimus cupiditate <a href="">nulla</a>, quae magni odit <a href="">totam</a> ut consequatur eveniet sunt quam provident sapiente dicta neque quod.</p>
       <p>Aliquam <a href="">dicta</a> sequi culpa fugiat <a href="">consequuntur</a> pariatur optio ad minima, maxime <a href="">odio</a>, distinctio magni impedit tempore enim repellendus <a href="">repudiandae</a> quas!</p>
     </div>
-
+    
   <script>
-    // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+    const hyperLinks = document.querySelectorAll("a");
+    const hightlightSpan = document.createElement("span");
+    hightlightSpan.setAttribute("class", "highlight");
+    document.body.appendChild(hightlightSpan);
+    
+    function highlightText(e) {
+      const linkBounds = this.getBoundingClientRect();
+      hightlightSpan.style.width = `${linkBounds.width}px`;
+      hightlightSpan.style.height = `${linkBounds.height}px`;
+      hightlightSpan.style.transform = `translate(${window.scrollX + linkBounds.left}px, ${window.scrollY + linkBounds.top}px)`;
+      // hightlightSpan.style.left = `${linkBounds.left}px`;
+      // hightlightSpan.style.top = `${linkBounds.top}px`;
+    }
+
+    hyperLinks.forEach(a => a.addEventListener("mouseenter", highlightText));
   </script>
 </body>
 </html>
