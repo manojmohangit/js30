@@ -25,6 +25,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Speech Detection with Copy Paste Feature\
 -Geolocation\
 -Follow Along Link Highlighter\
--Speech Synthesis
-## Next Assignment :label:
+-Speech Synthesis\
 -Sticky Nav
+## Next Assignment :label:
+-Event Capture, Propagation, Bubbling and Once
