@@ -40,8 +40,22 @@
   }
 </style>
 
-<button></button>
+<button>Button event will be listened once</button>
 <script>
+  const divsDOM = document.querySelectorAll("div");
+  const buttonDOM = document.querySelector("button");
+
+  function consoleText(e) {
+    //e.stopPropagation(); // stop the bubble effect 
+    console.log(this.classList.value);
+  }
+
+  divsDOM.forEach((div) => div.addEventListener("click", consoleText, {
+    capture: true, // by default false -> events will be called by bubble method(bottom to top)
+    once: false // event will be listened once if it is true. by default value is false
+  }));
+
+  buttonDOM.addEventListener("click", () => console.log("Clicked Once!!!"), {once: true})
 
 </script>
 </body>

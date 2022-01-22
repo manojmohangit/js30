@@ -26,6 +26,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Geolocation\
 -Follow Along Link Highlighter\
 -Speech Synthesis\
--Sticky Nav
-## Next Assignment :label:
+-Sticky Nav\
 -Event Capture, Propagation, Bubbling and Once
+## Next Assignment :label:
+-Stripe Follow Along Nav
