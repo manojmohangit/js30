@@ -220,7 +220,36 @@
 </style>
 
 <script>
-</script>
+  const navLinks = document.querySelectorAll(".cool li");
+  const dropdownBackground = document.querySelector(".dropdownBackground");
+  const nav = document.querySelector(".cool");
+  
+  function focusDropDown() {
+    this.classList.add("trigger-enter");
+    setTimeout(() => this.classList.contains("trigger-enter") &&  this.classList.add("trigger-enter-active"), 150);
+    dropdown = this.querySelector(".dropdown");
+    
+    
+    let { width, height, top, left } = dropdown.getBoundingClientRect();
+    const navBounds = nav.getBoundingClientRect();
+    dropdownBackground.style.height = `${height}px`;
+    dropdownBackground.style.width = `${width}px`;
 
+    top = top - navBounds.top;
+    left = left - navBounds.left;
+    dropdownBackground.style.transform = `translate(${left}px, ${top}px)`;
+
+    dropdownBackground.classList.add("open");
+   
+  }
+
+  function unFocusDropDown() {
+    this.classList.remove("trigger-enter", "trigger-enter-active");
+    dropdownBackground.classList.remove("open");
+  }
+
+  navLinks.forEach((navLink) => navLink.addEventListener("mouseenter", focusDropDown))
+  navLinks.forEach((navLink) => navLink.addEventListener("mouseleave", unFocusDropDown))
+</script>
 </body>
 </html>
