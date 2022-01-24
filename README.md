@@ -28,6 +28,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Speech Synthesis\
 -Sticky Nav\
 -Event Capture, Propagation, Bubbling and Once\
--Stripe Follow Along Nav
-## Next Assignment :label:
+-Stripe Follow Along Nav\
 -Click and Drag
+## Next Assignment :label:
+-Video Speed Controller
