@@ -15,6 +15,43 @@
   </div>
 
 <script>
+  var video = document.querySelector(".flex");
+  var speedBar = document.querySelector(".speed-bar")
+  var speed = document.querySelector(".speed")
+  var diffSpeed = 4/100;
+  var maxRate = 4;
+  var minRate = 0.04;
+  var isDown = false;
+
+  speed.addEventListener("wheel", (e) => {
+    let walkRate = (e.deltaY > 0 ? (diffSpeed*-1) : diffSpeed);
+    let playBackRate = video.playbackRate + walkRate;
+    walkRate = (playBackRate > maxRate || playBackRate < minRate) ? 0 : walkRate;
+    video.playbackRate += walkRate;
+    
+    speedBar.style.height = `${video.playbackRate*25}%`;
+    speedBar.textContent = `${video.playbackRate.toFixed(2)}x`;
+  });
+
+  function handlePlayBackrate(e) {
+    const speedHeight = speed.getBoundingClientRect().height;
+    video.playbackRate = (e.offsetY / speedHeight) * (maxRate - minRate) + minRate;
+    speedBar.style.height = `${(e.offsetY/speedHeight)*100}%`;
+    speedBar.textContent = `${video.playbackRate.toFixed(2)}x`;
+  }
+
+  speed.addEventListener("mousedown", (e) => {
+    isDown = true;
+    handlePlayBackrate(e);
+  });
+
+  speed.addEventListener("mouseup", (e) => {
+    isDown = false;
+  })
+  speed.addEventListener("mousemove", (e) => {
+    if(!isDown) return;
+    handlePlayBackrate(e);
+  })
 </script>
 </body>
 </html>
