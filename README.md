@@ -30,6 +30,7 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Event Capture, Propagation, Bubbling and Once\
 -Stripe Follow Along Nav\
 -Click and Drag\
--Video Speed Controller with mouse wheel and interactions
-## Next Assignment :label:
+-Video Speed Controller with mouse wheel and interactions\
 -Countdown Timer
+## Next Assignment :label:
+-Whack A Mole
