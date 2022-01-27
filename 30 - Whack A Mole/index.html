@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <h1>Whack-a-mole! <span class="score">0</span></h1>
+  <h1>Whack-a-mole! <span class="score">0</span><br/><span class="comment"></span></h1>
   <button onClick="startGame()">Start!</button>
 
   <div class="game">
@@ -36,7 +36,60 @@
   const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
+  const comment = document.querySelector('.comment');
 
+  let score = 0;
+  let previousHole = null, randomTime = 200, timeUp = true;
+
+  moles.forEach(mole => mole.addEventListener("click", incrementScore));
+
+  function startGame() {
+      score = 0;
+      timeUp = false;
+      moveUp();
+      comment.textContent = "Started the Game";
+
+      setTimeout(function() {
+        timeUp = true;
+        comment.textContent = "Finished";
+      }, generateRandomTime(3000, 10000));
+      
+  }
+
+
+  function generateRandomTime(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  function generateRandomHole(holes) {
+    var holeIndex = Math.floor(Math.random() * holes.length);
+    var hole = holes[holeIndex];
+
+    // if hole is same as before
+    if(hole === previousHole)
+      return generateRandomHole(holes)
+    return hole;
+  }
+
+  function moveUp() {
+    randomTime = generateRandomTime(200, 1000);
+    previousHole = generateRandomHole(holes);
+    previousHole.classList.add("up");
+      
+    setTimeout(function() {
+      previousHole.classList.remove("up");
+      if(!timeUp) {
+        moveUp();
+      }
+    }, randomTime);
+
+  }
+
+  function incrementScore() {
+    score++;
+    scoreBoard.textContent = score;
+    previousHole.classList.remove("up");
+  }
 </script>
 </body>
 </html>

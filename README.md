@@ -31,6 +31,6 @@ Javascript 30 course source codes. Hoping to maintain consistence and keep growi
 -Stripe Follow Along Nav\
 -Click and Drag\
 -Video Speed Controller with mouse wheel and interactions\
--Countdown Timer
-## Next Assignment :label:
+-Countdown Timer\
 -Whack A Mole
+## Next Assignment :label:
